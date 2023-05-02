@@ -1,7 +1,7 @@
 .cube {
     margin: 500px;
     position: relative;
-    width: 100px;
+    display: inline-block;
 }
 
 .side {
@@ -11,6 +11,7 @@
     text-align: center;
     line-height: 100px;
     color: black;
+    font-size: 40px;
 }
 
 .front {
@@ -46,21 +47,22 @@
 
 .spin {
     cursor: pointer;
+    transform: rotateX(0deg) rotateY(45deg);
+    transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
 }
 
 .spin:hover {
-    animation: spin 5s linear infinite;
+    animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
     0% {
-        transform: rotateY(0deg) rotateX(0deg);
-    }
-    50% {
-        transform: rotateY(360deg) rotateX(0deg);
+        transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
+        transform-origin: 50px 50px -50px;
     }
     100% {
-        transform: rotateY(360deg) rotateX(360deg);
+        transform: rotateX(360deg) rotateY(45deg) rotateZ(360deg);
+        transform-origin: 50px 50px -50px;
     }
 }

@@ -2,6 +2,7 @@
     margin: 500px;
     position: relative;
     display: inline-block;
+    border: black 1px solid;
 }
 
 .side {
@@ -10,44 +11,41 @@
     height: 100px;
     text-align: center;
     line-height: 100px;
-    color: black;
+    color: goldenrod;
     font-size: 40px;
+    background-color: rgb(255, 0, 0, .75);
+    border: black solid 1px;
+    ;
 }
 
-.front {
-    background-color: rgba(255, 0, 0, 1);
-}
+
+/* .front {
+} */
 
 .back {
-    background-color: rgb(0, 0, 255, 1);
-    color: white;
     transform: rotateX(180deg) translateZ(100px);
     text-decoration: underline;
 }
 
 .top {
-    background-color: #2d8000;
     transform: rotateX(90deg) translateZ(50px) translateY(-50px);
 }
 
 .left {
-    background-color: purple;
     transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
 }
 
 .right {
-    background-color: orange;
     transform: rotateY(90deg) translateZ(50px) translateX(50px);
 }
 
 .bottom {
-    background-color: yellow;
     transform: rotateX(270deg) translateZ(50px) translateY(50px);
 }
 
 .spin {
     cursor: pointer;
-    transform: rotateX(0deg) rotateY(45deg);
+    /* transform: rotateX(0deg) rotateY(45deg); */
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
 }
@@ -58,11 +56,11 @@
 
 @keyframes spin {
     0% {
-        transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
+        transform: rotateY(0deg);
         transform-origin: 50px 50px -50px;
     }
     100% {
-        transform: rotateX(360deg) rotateY(45deg) rotateZ(360deg);
+        transform: rotateY(360deg);
         transform-origin: 50px 50px -50px;
     }
 }

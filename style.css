@@ -13,7 +13,7 @@
     line-height: 100px;
     color: goldenrod;
     font-size: 40px;
-    background-color: rgb(255, 0, 0, .75);
+    background-color: rgba(134, 7, 47, 0.75);
     border: black solid 1px;
     ;
 }
@@ -56,11 +56,11 @@
 
 @keyframes spin {
     0% {
-        transform: rotateX(0deg);
+        transform: rotateX(0deg) rotateY(0deg);
         transform-origin: 50px 50px -50px;
     }
     100% {
-        transform: rotateX(360deg);
+        transform: rotateX(360deg)rotateY(360deg);
         transform-origin: 50px 50px -50px;
     }
 }

@@ -28,7 +28,7 @@
 }
 
 .top {
-    transform: rotateX(90deg) translateZ(50px) translateY(-50px);
+    transform: rotateX(90deg) rotateZ(180deg) translateZ(50px) translateY(50px);
 }
 
 .left {
@@ -36,7 +36,7 @@
 }
 
 .right {
-    transform: rotateY(90deg) translateZ(50px) translateX(50px);
+    transform: rotateY(90deg) rotateZ(270deg) translateZ(50px) translateY(50px);
 }
 
 .bottom {
@@ -56,11 +56,11 @@
 
 @keyframes spin {
     0% {
-        transform: rotateY(0deg);
+        transform: rotateX(0deg);
         transform-origin: 50px 50px -50px;
     }
     100% {
-        transform: rotateY(360deg);
+        transform: rotateX(360deg);
         transform-origin: 50px 50px -50px;
     }
 }

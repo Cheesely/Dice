@@ -32,7 +32,7 @@
 }
 
 .left {
-    transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px) translateY(50px);
 }
 
 .right {

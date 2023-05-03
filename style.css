@@ -1,8 +1,7 @@
 .cube {
-    margin: 500px;
+    margin: 150px;
     position: relative;
     display: inline-block;
-    border: black 1px solid;
 }
 
 .side {
@@ -13,9 +12,32 @@
     line-height: 100px;
     color: goldenrod;
     font-size: 40px;
+    border: rgb(0, 0, 0, 0.25) solid 1px;
+    border-radius: 5px;
+}
+
+.red>* {
     background-color: rgba(134, 7, 47, 0.75);
-    border: black solid 1px;
-    ;
+}
+
+.orange>* {
+    background-color: rgba(200, 65, 32, 0.75);
+}
+
+.yellow>* {
+    background-color: rgba(175, 199, 56, 0.75);
+}
+
+.green>* {
+    background-color: rgba(117, 200, 139, 0.75);
+}
+
+.blue>* {
+    background-color: rgba(46, 123, 224, 0.75);
+}
+
+.purple>* {
+    background-color: rgba(82, 12, 139, 0.75);
 }
 
 
@@ -48,11 +70,35 @@
     /* transform: rotateX(0deg) rotateY(45deg); */
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
-}
-
-.spin:hover {
     animation: spin 10s linear infinite;
 }
+
+.red {
+    animation-delay: 0.2s;
+}
+
+.orange {
+    animation-delay: 0.4s;
+}
+
+.yellow {
+    animation-delay: 0.6;
+}
+
+.green {
+    animation-delay: 0.8s;
+}
+
+.blue {
+    animation-delay: 1s;
+}
+
+.purple {
+    animation-delay: 1.2s;
+}
+
+
+/* .spin:hover {} */
 
 @keyframes spin {
     0% {

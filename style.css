@@ -12,7 +12,8 @@
     line-height: 100px;
     color: goldenrod;
     font-size: 40px;
-    border: black solid 1px;
+    border: rgb(0, 0, 0, 0.25) solid 1px;
+    border-radius: 5px;
 }
 
 .red>* {
@@ -69,11 +70,35 @@
     /* transform: rotateX(0deg) rotateY(45deg); */
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
-}
-
-.spin:hover {
     animation: spin 10s linear infinite;
 }
+
+.red {
+    animation-delay: 0.2s;
+}
+
+.orange {
+    animation-delay: 0.4s;
+}
+
+.yellow {
+    animation-delay: 0.6;
+}
+
+.green {
+    animation-delay: 0.8s;
+}
+
+.blue {
+    animation-delay: 1s;
+}
+
+.purple {
+    animation-delay: 1.2s;
+}
+
+
+/* .spin:hover {} */
 
 @keyframes spin {
     0% {

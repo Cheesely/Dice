@@ -82,7 +82,7 @@
     /* transform: rotateX(0deg) rotateY(45deg); */
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
-    animation: spin-origin-50 10s linear infinite;
+    animation: spin-origin-50 3s linear infinite;
 }
 
 .red {
@@ -179,7 +179,7 @@
         /* transform: rotateX(0deg) rotateY(45deg); */
         transform-origin: 40px 40px -40px;
         transform-style: preserve-3d;
-        animation: spin-origin-40 10s linear infinite;
+        animation: spin-origin-40 3s linear infinite;
     }
 }
 
@@ -220,7 +220,7 @@
         /* transform: rotateX(0deg) rotateY(45deg); */
         transform-origin: 30px 30px -30px;
         transform-style: preserve-3d;
-        animation: spin-origin-30 10s linear infinite;
+        animation: spin-origin-30 3s linear infinite;
     }
 }
 
@@ -261,7 +261,7 @@
         /* transform: rotateX(0deg) rotateY(45deg); */
         transform-origin: 20px 20px -20px;
         transform-style: preserve-3d;
-        animation: spin-origin-30 10s linear infinite;
+        animation: spin-origin-30 1s linear infinite;
     }
 }
 

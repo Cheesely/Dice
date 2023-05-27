@@ -1,15 +1,12 @@
 .row {
-    display: flex;
-    padding: 35px;
-    flex-flow: row wrap-reverse;
+    padding: 335px;
     position: relative;
-    height: 800px;
+    height: 150px;;
 }
 
 .cube {
     position: relative;
-    flex-basis: 16.666%;
-    flex: 1;
+    display:inline-block;
 }
 
 .side {
@@ -48,42 +45,68 @@
     background-color: rgba(82, 12, 139, 0.75);
 }
 
-
-/* .front {
-} */
-
-.back {
-    transform: rotateX(180deg) translateZ(100px);
-    text-decoration: underline;
-}
-
-.top {
-    transform: rotateX(90deg) rotateZ(180deg) translateZ(50px) translateY(50px);
-}
-
 .left {
     transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px) translateY(50px);
+}
+
+
+ .front {
+    text-decoration: underline;
+}
+ 
+.back {
+    transform: rotateX(180deg) translateZ(100px);
 }
 
 .right {
     transform: rotateY(90deg) rotateZ(270deg) translateZ(50px) translateY(50px);
 }
 
+.top {
+    transform: rotateX(270deg)  rotateZ(180deg) translateY(-50px) translateZ(50px) ;
+}
+
+
 .bottom {
-    transform: rotateX(270deg) translateZ(50px) translateY(50px);
+    transform: rotateX(270deg) rotateZ(180deg) rotateY(180deg) translateZ(50px) translateY(-50px);
 }
 
-.six {
-    transform-style: preserve-3d;
-    transform: rotateZ(180deg);
-}
-
-.spin {
-    cursor: pointer;
-    /* transform: rotateX(0deg) rotateY(45deg); */
+.one {
+    transform: rotateX(180deg);
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
-    animation: spin-origin-50 3s linear infinite;
+    animation: land-on-one 10s 1;
+}
+.two {
+    transform: rotateX(270deg) ;
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+}
+.three {
+    transform: rotateX(90deg) rotateZ(-90deg);
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+}
+.four {
+    transform: rotateX(90deg) rotateZ(90deg);
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+}
+.five {
+    transform: rotateX(90deg) rotateY(180deg);
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+}
+.six{
+    transform: none;
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+}
+.spin {
+    cursor: pointer;
+    transform-origin: 50px 50px -50px;
+    transform-style: preserve-3d;
+    animation: spin-test-X 3s linear infinite;
 }
 
 @keyframes spin-origin-50 {
@@ -100,3 +123,15 @@
         transform-origin: 50px 50px -50px;
     }
 }
+
+@keyframes spin-test-X {
+    0% {
+        transform: rotateX(0deg);
+        transform-origin: 50px 50px -50px;
+    }
+    100% {
+        transform: rotateX(360deg);
+        transform-origin: 50px 50px -50px;
+    }
+}
+

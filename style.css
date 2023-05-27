@@ -106,7 +106,7 @@
     cursor: pointer;
     transform-origin: 50px 50px -50px;
     transform-style: preserve-3d;
-    animation: spin-test-X 3s linear infinite;
+    animation: spin-origin-50 3s linear infinite;
 }
 
 @keyframes spin-origin-50 {

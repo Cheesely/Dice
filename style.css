@@ -1,5 +1,5 @@
 .row {
-    padding: 335px;
+    padding: 55px;
     position: relative;
     height: 150px;;
 }
@@ -149,4 +149,34 @@
         transform-origin: 50px 50px -50px;
     }
 }
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
+  .colourPicker{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:100px;
+    align-items:center;
+    flex-direction:column;
+  }
+  section > section {
+    display:flex;
+  }
+  section > section > section {
+    width: 2px;
+    height: 2px;
+  }
+  
 

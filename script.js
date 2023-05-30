@@ -1,16 +1,6 @@
-colourPicker = document.querySelector('.colourPicker');
-for(let j=0; j<100; j++){
-  const rowSection = document.createElement('section');
-  rowSection.id="row" + j;
-  colourPicker.appendChild(rowSection);
-  for(let i=0; i<360; i++){
-    let colourSection = document.createElement('section');
-    colourSection.id="column" + i;
-    colourSection.style.backgroundColor = "hsl(" + i + ", " + j + "%, 50%";
-    colourSection.addEventListener("click", () => setDiceColor("hsl(" + i + ", " + j + "%, 50%"));
-    rowSection.appendChild(colourSection);
-  }
-}
+
+initializeColourPicker(50);
+initializeLightnessPicker();
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -53,4 +43,28 @@ async function rollDice(){
     const APIResponse = (await fetch('https://rolz.org/api/?1d6.json'));
     const diceRoll = await APIResponse.json();
     return diceRoll.result;
+}
+
+function initializeColourPicker(lightness){
+    colourPicker = document.querySelector('.colourPicker');
+    colourPicker.innerHTML = "";
+    for(let j=0; j<100; j++){
+        const rowSection = document.createElement('section');
+        colourPicker.appendChild(rowSection);
+        for(let i=0; i<360; i++){
+          let colourSection = document.createElement('section');
+          colourSection.style.backgroundColor = "hsl(" + i + ", " + j + "%, " + lightness + "%";
+          colourSection.addEventListener("click", () => setDiceColor("hsl(" + i + ", " + j + "%, " + lightness + "%"));
+          rowSection.appendChild(colourSection);
+        }
+      }
+}
+function initializeLightnessPicker(){
+    lightnessPicker = document.querySelector('.lightnessPicker');
+    for(let i=0; i<100; i++){
+        let lightnessSection = document.createElement('section');
+        lightnessSection.style.backgroundColor = "hsl(0, 0%, " + i + "%";
+        lightnessSection.addEventListener("click", () => initializeColourPicker(i));
+        lightnessPicker.appendChild(lightnessSection);
+    }
 }

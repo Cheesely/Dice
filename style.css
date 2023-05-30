@@ -174,9 +174,25 @@
   section > section {
     display:flex;
   }
-  section > section > section {
+  .colourPicker > section > section {
     width: 2px;
     height: 2px;
+  }
+  .lightnessPicker{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:100px;
+    align-items:center;
+    flex-direction:column;
+  }
+  .lightnessPicker > section{
+    width: 16px;
+    height: 2px;
+  }
+
+  .pickers {
+    display: flex;
   }
   
 

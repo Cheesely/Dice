@@ -194,5 +194,16 @@
   .pickers {
     display: flex;
   }
-  
+  .opacityPicker{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:100px;
+    align-items:center;
+    flex-direction:column;
+  }
+  .opacityPicker > section{
+    width: 16px;
+    height: 2px;
+  }
 

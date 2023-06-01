@@ -1,6 +1,7 @@
 
-initializeColourPicker(50);
+initializeColourPicker(50,100);
 initializeLightnessPicker();
+initializeOpacityPicker();
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,7 +46,7 @@ async function rollDice(){
     return diceRoll.result;
 }
 
-function initializeColourPicker(lightness){
+function initializeColourPicker(lightness, opacity){
     colourPicker = document.querySelector('.colourPicker');
     colourPicker.innerHTML = "";
     for(let j=0; j<100; j++){
@@ -53,8 +54,8 @@ function initializeColourPicker(lightness){
         colourPicker.appendChild(rowSection);
         for(let i=0; i<360; i++){
           let colourSection = document.createElement('section');
-          colourSection.style.backgroundColor = "hsl(" + i + ", " + j + "%, " + lightness + "%";
-          colourSection.addEventListener("click", () => setDiceColor("hsl(" + i + ", " + j + "%, " + lightness + "%"));
+          colourSection.style.backgroundColor = "hsla(" + i + ", " + j + "%, " + lightness + "%, " + opacity + "%)";
+          colourSection.addEventListener("click", () => setDiceColor("hsla(" + i + ", " + j + "%, " + lightness + "%, " + opacity + "%"));
           rowSection.appendChild(colourSection);
         }
       }
@@ -64,7 +65,16 @@ function initializeLightnessPicker(){
     for(let i=0; i<100; i++){
         let lightnessSection = document.createElement('section');
         lightnessSection.style.backgroundColor = "hsl(0, 0%, " + i + "%";
-        lightnessSection.addEventListener("click", () => initializeColourPicker(i));
+        lightnessSection.addEventListener("click", () => initializeColourPicker(i, 100));
         lightnessPicker.appendChild(lightnessSection);
+    }
+}
+function initializeOpacityPicker(){
+    opacityPicker = document.querySelector('.opacityPicker');
+    for(let i=0; i<100; i++){
+        let opacitySection = document.createElement('section');
+        opacitySection.style.backgroundColor = "hsla(0, 0%, 0%, " + i + "%";
+        opacitySection.addEventListener("click", () => initializeColourPicker(50, i));
+        opacityPicker.appendChild(opacitySection);
     }
 }

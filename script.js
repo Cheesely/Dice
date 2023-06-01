@@ -51,9 +51,9 @@ function setDiceColor(color){
 }
 
 async function rollDice(){
-    const APIResponse = (await fetch('https://rolz.org/api/?1d6.json'));
+    const APIResponse = (await fetch('https://www.dejete.com/api?nbde=1&tpde=6'));
     const diceRoll = await APIResponse.json();
-    return diceRoll.result;
+    return diceRoll[0].value;
 }
 
 function initializeColourPicker(lightness){

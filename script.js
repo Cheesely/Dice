@@ -6,25 +6,36 @@ initializeLightnessPicker();
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".cube").forEach((element) => {
         element.addEventListener("click", async function() {
-            const diceRoll = await rollDice();
-            if(diceRoll == 1){
-                this.classList.remove('spin');
-                this.classList.add('one');
-            } else if(diceRoll == 2){
-                this.classList.remove('spin');
-                this.classList.add('two');
-            } else if(diceRoll == 3){
-                this.classList.remove('spin');
-                this.classList.add('three');
-            } else if(diceRoll == 4){
-                this.classList.remove('spin');
-                this.classList.add('four');
-            } else if(diceRoll == 5){
-                this.classList.remove('spin');
-                this.classList.add('five');
-            } else if(diceRoll == 6){
-                this.classList.remove('spin');
-                this.classList.add('six');
+            if (this.classList.contains('spin')){
+                const diceRoll = await rollDice();
+                if(diceRoll == 1){
+                    this.classList.remove('spin');
+                    this.classList.add('one');
+                } else if(diceRoll == 2){
+                    this.classList.remove('spin');
+                    this.classList.add('two');
+                } else if(diceRoll == 3){
+                    this.classList.remove('spin');
+                    this.classList.add('three');
+                } else if(diceRoll == 4){
+                    this.classList.remove('spin');
+                    this.classList.add('four');
+                } else if(diceRoll == 5){
+                    this.classList.remove('spin');
+                    this.classList.add('five');
+                } else if(diceRoll == 6){
+                    this.classList.remove('spin');
+                    this.classList.add('six');
+                }
+            }
+            else{
+                this.classList.remove('one');
+                this.classList.remove('two');
+                this.classList.remove('three');
+                this.classList.remove('four');
+                this.classList.remove('five');
+                this.classList.remove('six');
+                this.classList.add('spin');
             }
 
         });
@@ -40,9 +51,9 @@ function setDiceColor(color){
 }
 
 async function rollDice(){
-    const APIResponse = (await fetch('https://rolz.org/api/?1d6.json'));
+    const APIResponse = (await fetch('https://www.dejete.com/api?nbde=1&tpde=6'));
     const diceRoll = await APIResponse.json();
-    return diceRoll.result;
+    return diceRoll[0].value;
 }
 
 function initializeColourPicker(lightness){
